@@ -3,11 +3,9 @@ const router = express.Router();
 const { Post } = require('./../../models/post');
 const { Like } = require('./../../models/like');
 const { validateRecord } = require('./../posts/middlewares');
-const { checkIfAuthenticated } = require('./../../lib/authenticate');
 
 router.post(
   '/:id',
-  checkIfAuthenticated,
   validateRecord,
   function(req, res, next) {
   let { record } = res.locals|| {};

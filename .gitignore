@@ -1,0 +1,4 @@
+node_modules
+config/fbServiceAccountKey.json
+config/config.json
+env.json

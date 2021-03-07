@@ -30,8 +30,8 @@ router.get(
   async function(req, res, next) {
     let { query = {}, pagination} = res.locals|| {};
     let sort = {
-      createdAt: 1,
-      points: 1
+      createdAt: -1,
+      points: -1
     }
     let total = await Post.countDocuments(query);
     Post.find(query)

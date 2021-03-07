@@ -7,7 +7,8 @@ router.get(
   validateRecord,
   function(req, res, next) {
     let { record } = res.locals || {};
-    res.status(200).send(record);
+    if (record) res.status(200).send(record);
+    else res.status(404).send(record);
   }
 );
 

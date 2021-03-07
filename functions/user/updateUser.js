@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const admin = require('firebase-admin');
+const utils = require('./../../lib/utils');
 const { formatRules, validateRequest, formatData } = require('./middlewares');
 
 router.patch(

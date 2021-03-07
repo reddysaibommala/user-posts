@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let VoteSchema = new mongoose.Schema({
+let LikeSchema = new mongoose.Schema({
   _id: {
     type: mongoose.Schema.ObjectId,
     auto: true
@@ -18,10 +18,10 @@ let VoteSchema = new mongoose.Schema({
   toObject: { getters: true }
 });
 
-VoteSchema.pre('save', function (next) {
+LikeSchema.pre('save', function (next) {
   this.updatedAt = Date.now();
   next();
 });
 
-const Vote = mongoose.model('Vote', VoteSchema, 'votes');
-module.exports = { Vote };
+const Like = mongoose.model('Like', LikeSchema, 'likes');
+module.exports = { Like };

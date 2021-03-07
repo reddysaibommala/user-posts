@@ -13,6 +13,7 @@ let PostSchema = new mongoose.Schema({
     url: String,
     key: String
   },
+  points: { type: Number, default: 0 },
   createdAt: { type: Date },
   updatedAt: { type: Date }
 }, {
